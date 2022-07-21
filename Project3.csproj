@@ -190,6 +190,7 @@
     <Compile Include="Controllers\Entity\LapsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="DbInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -271,16 +272,16 @@
     <Content Include="Views\Laps\Details.cshtml" />
     <Content Include="Views\Laps\Edit.cshtml" />
     <Content Include="Views\Laps\Index.cshtml" />
-    <Content Include="Views\Devices\Create.cshtml" />
-    <Content Include="Views\Devices\Delete.cshtml" />
-    <Content Include="Views\Devices\Details.cshtml" />
-    <Content Include="Views\Devices\Edit.cshtml" />
-    <Content Include="Views\Devices\Index.cshtml" />
     <Content Include="Views\Complaints\Create.cshtml" />
     <Content Include="Views\Complaints\Delete.cshtml" />
     <Content Include="Views\Complaints\Details.cshtml" />
     <Content Include="Views\Complaints\Edit.cshtml" />
     <Content Include="Views\Complaints\Index.cshtml" />
+    <Content Include="Views\Devices\Create.cshtml" />
+    <Content Include="Views\Devices\Delete.cshtml" />
+    <Content Include="Views\Devices\Details.cshtml" />
+    <Content Include="Views\Devices\Edit.cshtml" />
+    <Content Include="Views\Devices\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

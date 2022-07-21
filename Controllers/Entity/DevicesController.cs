@@ -16,6 +16,7 @@ namespace Project3.Controllers.Entity
         private ModelContext db = new ModelContext();
 
         // GET: Devices
+        
         public ActionResult Index()
         {
             var devices = db.Devices.Include(d => d.Lap);
@@ -23,6 +24,7 @@ namespace Project3.Controllers.Entity
         }
 
         // GET: Devices/Details/5
+             
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -38,6 +40,7 @@ namespace Project3.Controllers.Entity
         }
 
         // GET: Devices/Create
+      
         public ActionResult Create()
         {
             ViewBag.LapId = new SelectList(db.Laps, "LapId", "LapName");
@@ -49,6 +52,7 @@ namespace Project3.Controllers.Entity
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+       
         public ActionResult Create([Bind(Include = "DeviceId,DeviceName,LapId")] Device device)
         {
             if (ModelState.IsValid)
@@ -63,6 +67,7 @@ namespace Project3.Controllers.Entity
         }
 
         // GET: Devices/Edit/5
+        
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -83,6 +88,7 @@ namespace Project3.Controllers.Entity
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        
         public ActionResult Edit([Bind(Include = "DeviceId,DeviceName,LapId")] Device device)
         {
             if (ModelState.IsValid)
@@ -96,6 +102,7 @@ namespace Project3.Controllers.Entity
         }
 
         // GET: Devices/Delete/5
+        
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -113,6 +120,7 @@ namespace Project3.Controllers.Entity
         // POST: Devices/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        
         public ActionResult DeleteConfirmed(int id)
         {
             Device device = db.Devices.Find(id);

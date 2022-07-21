@@ -9,6 +9,7 @@ namespace Project3.Models.Entity
     {
         public int ComplaintId { get; set; }
         public String Detail { get; set; }
+        public String Status { get; set; }
         public int DeviceId { get; set; }
         public virtual ICollection<ComplaintDevice> ComplaintDevices
         {

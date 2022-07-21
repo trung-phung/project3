@@ -9,6 +9,7 @@ namespace Project3.Models.Entity
     {
         public int DeviceId { get; set; }
         public String DeviceName { get; set; }
+        public String Status { get; set; }
         public int LapId { get; set; }
         public virtual Lap Lap { get; set; }
     }

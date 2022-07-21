@@ -16,6 +16,7 @@ namespace Project3.Controllers.Entity
         private ModelContext db = new ModelContext();
 
         // GET: Laps
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             var laps = db.Laps.Include(l => l.Branch);
@@ -23,6 +24,7 @@ namespace Project3.Controllers.Entity
         }
 
         // GET: Laps/Details/5
+        [Authorize(Roles = "Admin")]        
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -38,6 +40,7 @@ namespace Project3.Controllers.Entity
         }
 
         // GET: Laps/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             ViewBag.BranchId = new SelectList(db.Branches, "BranchId", "BranchName");
@@ -49,6 +52,7 @@ namespace Project3.Controllers.Entity
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create([Bind(Include = "LapId,LapName,BranchId")] Lap lap)
         {
             if (ModelState.IsValid)
@@ -63,6 +67,7 @@ namespace Project3.Controllers.Entity
         }
 
         // GET: Laps/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -83,6 +88,7 @@ namespace Project3.Controllers.Entity
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "LapId,LapName,BranchId")] Lap lap)
         {
             if (ModelState.IsValid)
@@ -96,6 +102,7 @@ namespace Project3.Controllers.Entity
         }
 
         // GET: Laps/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -111,6 +118,7 @@ namespace Project3.Controllers.Entity
         }
 
         // POST: Laps/Delete/5
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
